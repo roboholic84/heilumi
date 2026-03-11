@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brands — HEILUMI</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400&display=swap">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #FFF; color: #000; }
+        .navbar { position: fixed; top: 0; left: 0; right: 0; background: #FFF; border-bottom: 1px solid #e0e0e0; padding: 24px 60px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; text-decoration: none; color: #000; }
+        .nav-menu { display: flex; list-style: none; gap: 48px; }
+        .nav-menu a { text-decoration: none; color: #000; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+        .login-modal { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255,255,255,0.98); display: flex; align-items: center; justify-content: center; z-index: 10000; }
+        .login-card { background: #FFF; border: 2px solid #000; padding: 50px; max-width: 450px; width: 90%; text-align: center; }
+        .login-card h2 { font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 16px; }
+        .login-card .subtitle { color: #666; margin-bottom: 36px; font-size: 15px; }
+        .form-group { margin-bottom: 20px; text-align: left; }
+        .form-group label { display: block; font-size: 11px; text-transform: uppercase; margin-bottom: 8px; font-weight: 600; letter-spacing: 1px; }
+        .form-group input { width: 100%; padding: 12px; border: 1px solid #e0e0e0; font-size: 15px; }
+        .btn { width: 100%; padding: 14px; border: 2px solid #000; background: transparent; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; cursor: pointer; }
+        .btn:hover { background: #000; color: #fff; }
+        .error { color: #d00; font-size: 13px; margin-top: 16px; display: none; }
+        .content { display: none; padding-top: 100px; }
+        .hero { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 100px 60px; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 56px; font-weight: 900; margin-bottom: 24px; }
+        .badge { display: inline-block; padding: 8px 20px; border: 1px solid #000; font-size: 12px; font-weight: 600; letter-spacing: 2px; margin-top: 32px; }
+        .section { padding: 100px 60px; text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
+        .brand-box { border: 1px solid #e0e0e0; padding: 60px 30px; text-align: center; }
+        .brand-box h3 { font-family: 'Playfair Display', serif; font-size: 24px; letter-spacing: 2px; }
+        .brand-box p { color: #999; font-size: 13px; margin-top: 12px; text-transform: uppercase; }
+        @media (max-width: 768px) { .navbar { padding: 16px 24px; } .login-card { padding: 40px 24px; } }
+    </style>
+</head>
+<body>
+    <!-- Login Modal -->
+    <div class="login-modal" id="loginModal">
+        <div class="login-card">
+            <h2>HEILUMI — Brands</h2>
+            <p class="subtitle">This section is currently restricted.</p>
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <p class="error" id="errorMsg">Incorrect credentials.</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Content (hidden until login) -->
+    <div class="content" id="mainContent">
+        <nav class="navbar">
+            <a href="index.html" class="logo">HEILUMI</a>
+            <ul class="nav-menu">
+                <li><a href="designers.html">Designers</a></li>
+                <li><a href="collectors.html">Collectors</a></li>
+                <li><a href="brands.html">Brands</a></li>
+                <li><a href="rnd.html">R&D</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <section class="hero">
+            <h1>Global Lighting Brands</h1>
+            <p style="font-size: 18px; color: #666; max-width: 700px;">A curated selection of the world's finest lighting brands, coming soon to the HEILUMI platform.</p>
+            <div class="badge">COMING SOON</div>
+        </section>
+
+        <section class="section">
+            <div class="grid">
+                <div class="brand-box"><h3>HAY</h3><p>Denmark</p></div>
+                <div class="brand-box"><h3>FOSCARINI</h3><p>Italy</p></div>
+                <div class="brand-box"><h3>FLOS</h3><p>Italy</p></div>
+                <div class="brand-box"><h3>ARTEMIDE</h3><p>Italy</p></div>
+                <div class="brand-box"><h3>LOUIS POULSEN</h3><p>Denmark</p></div>
+                <div class="brand-box"><h3>MUUTO</h3><p>Denmark</p></div>
+            </div>
+            <p style="margin-top: 60px; color: #999; font-size: 15px;">Full brand catalog and Shopify integration coming soon.</p>
+        </section>
+    </div>
+
+    <script>
+        // Check if already logged in
+        if (sessionStorage.getItem('heilumi_auth') === 'true') {
+            document.getElementById('loginModal').style.display = 'none';
+            document.getElementById('mainContent').style.display = 'block';
+        }
+
+        function handleLogin(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            if (username === 'admin' && password === 'admin@2026') {
+                sessionStorage.setItem('heilumi_auth', 'true');
+                document.getElementById('loginModal').style.display = 'none';
+                document.getElementById('mainContent').style.display = 'block';
+                document.getElementById('errorMsg').style.display = 'none';
+            } else {
+                document.getElementById('errorMsg').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
