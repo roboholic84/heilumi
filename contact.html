@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — HEILUMI</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400&display=swap">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #FFF; color: #000; }
+        .navbar { position: fixed; top: 0; left: 0; right: 0; background: #FFF; border-bottom: 1px solid #e0e0e0; padding: 24px 60px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; text-decoration: none; color: #000; }
+        .nav-menu { display: flex; list-style: none; gap: 48px; }
+        .nav-menu a { text-decoration: none; color: #000; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+        .hero { min-height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 160px 60px 80px; }
+        h1 { font-family: 'Playfair Display', serif; font-size: clamp(42px, 6vw, 60px); font-weight: 900; margin-bottom: 20px; }
+        .section { padding: 80px 60px; max-width: 1100px; margin: 0 auto; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 11px; text-transform: uppercase; margin-bottom: 8px; font-weight: 600; letter-spacing: 1px; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #e0e0e0; font-family: 'Inter', sans-serif; font-size: 15px; }
+        .btn { width: 100%; padding: 14px; border: 2px solid #000; background: transparent; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; cursor: pointer; transition: 0.3s; }
+        .btn:hover { background: #000; color: #fff; }
+        .footer { border-top: 1px solid #e0e0e0; padding: 60px; text-align: center; margin-top: 80px; }
+        @media (max-width: 768px) { .navbar { padding: 16px 24px; } .contact-grid { grid-template-columns: 1fr; gap: 40px; } .section { padding: 60px 24px; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">HEILUMI</a>
+        <ul class="nav-menu">
+            <li><a href="designers.html">Designers</a></li>
+            <li><a href="collectors.html">Collectors</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <section class="hero">
+        <h1>Get in Touch</h1>
+        <p style="font-size: 17px; color: #666;">We'd love to hear from you.</p>
+    </section>
+    <section class="section">
+        <div class="contact-grid">
+            <div>
+                <h3 style="font-size: 22px; margin-bottom: 16px;">Visit Us</h3>
+                <p style="color: #666; line-height: 1.9;">HEILUMI Studio<br>322 Teheran-ro, Yeoksam-dong<br>Gangnam-gu, Seoul 06211<br>South Korea</p>
+                <h3 style="font-size: 22px; margin: 36px 0 16px;">Email</h3>
+                <p><a href="mailto:roboholic84@gmail.com" style="color: #000; text-decoration: none; border-bottom: 1px solid #000;">roboholic84@gmail.com</a></p>
+            </div>
+            <div>
+                <h3 style="font-size: 22px; margin-bottom: 28px;">Send a Message</h3>
+                <form action="https://formspree.io/f/xyzyzyzyz" method="POST">
+                    <input type="hidden" name="_to" value="roboholic84@gmail.com">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div style="font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; letter-spacing: 3px; margin-bottom: 12px;">HEILUMI</div>
+        <p style="color: #666; font-size: 13px;">© 2025 HEILUMI. All rights reserved. Seoul, South Korea</p>
+    </footer>
+</body>
+</html>
